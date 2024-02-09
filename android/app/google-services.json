@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "823653093142",
+    "project_id": "rabka-movie-01",
+    "storage_bucket": "rabka-movie-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823653093142:android:a9a391eb9d754698fc8a37",
+        "android_client_info": {
+          "package_name": "com.example.rabka_movie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJJSxofBW4e_Dh6HeIzMz4aKo4vFvn4aE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
