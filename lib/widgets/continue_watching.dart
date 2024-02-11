@@ -29,7 +29,10 @@ class ContinueWatching extends StatelessWidget {
                         _toggleValue == true ? bgPrimaryColor : Colors.black87,
                   ),
                 ),
-                const Icon(Icons.navigate_next),
+                Icon(
+                  Icons.navigate_next,
+                  color: _toggleValue == true ? bgPrimaryColor : primaryColor,
+                ),
               ],
             ),
           ),

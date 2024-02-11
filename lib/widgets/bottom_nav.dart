@@ -37,7 +37,9 @@ class BottomNav extends StatelessWidget {
             children: <Widget>[
               for (int index = 0; index < navItems.length; index++)
                 GestureDetector(
-                  onTap: () => onTap(index),
+                  onTap: () {
+                    onTap(index);
+                  },
                   child: Column(
                     children: [
                       Icon(

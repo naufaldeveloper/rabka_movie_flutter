@@ -1,6 +1,7 @@
 import 'package:rabka_movie/api/api.dart';
 import 'package:rabka_movie/models/movie_model.dart';
 import 'package:rabka_movie/provider/drawer_toggle_provider.dart';
+import 'package:rabka_movie/screens/upcoming_movies_screen.dart';
 import 'package:rabka_movie/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,21 +32,35 @@ class _UpcomingMovieState extends State<UpcomingMovies> {
           padding: const EdgeInsets.only(right: 20, left: 20),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Upcoming Movies",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15,
-                      color: _toggleValue == true
-                          ? bgPrimaryColor
-                          : Colors.black87,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UpcomingMoviesScreen(),
                     ),
-                  ),
-                  const Icon(Icons.navigate_next),
-                ],
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Upcoming Movies",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: _toggleValue == true
+                            ? bgPrimaryColor
+                            : Colors.black87,
+                      ),
+                    ),
+                    Icon(
+                      Icons.navigate_next,
+                      color:
+                          _toggleValue == true ? bgPrimaryColor : primaryColor,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -71,10 +86,9 @@ class _UpcomingMovieState extends State<UpcomingMovies> {
                     scrollDirection: Axis.horizontal,
                     itemCount: upcomingMoviesData.length,
                     itemBuilder: (context, index) {
-                      final backDropPath =
-                          upcomingMoviesData[index].backDropPath;
+                      final posterPath = upcomingMoviesData[index].posterPath;
                       final imageUrl =
-                          "https://image.tmdb.org/t/p/original/$backDropPath";
+                          "https://image.tmdb.org/t/p/original/$posterPath";
                       return Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Column(

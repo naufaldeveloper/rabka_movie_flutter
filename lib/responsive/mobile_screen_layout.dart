@@ -14,6 +14,8 @@ class MobileScreenLayout extends StatefulWidget {
 }
 
 class _MobileScreenLayoutState extends State<MobileScreenLayout> {
+  late final _advancedDrawerController = AdvancedDrawerController();
+
   late PageController pageController;
   int _page = 0;
 
@@ -27,6 +29,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   void dispose() {
     super.dispose();
     pageController.dispose();
+    _advancedDrawerController.dispose();
   }
 
   void onPageChanged(int page) {
@@ -41,11 +44,10 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
 
   List<Map<String, dynamic>> navItems = [
     {"page": "Home", "icon": Icons.home},
-    {"page": "Series", "icon": Icons.tv},
     {"page": "Movies", "icon": Icons.movie},
+    {"page": "Series", "icon": Icons.tv},
     {"page": "Local", "icon": Icons.location_on},
   ];
-  late final _advancedDrawerController = AdvancedDrawerController();
 
   @override
   Widget build(BuildContext context) {

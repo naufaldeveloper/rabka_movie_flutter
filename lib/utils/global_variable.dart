@@ -10,7 +10,7 @@ const apiKey = "b822a913ac91d291333b43feddcaac11";
 
 List<Widget> homeScreenItems = [
   const HomeScreen(),
-  const SeriesScreen(),
   const MoviesScreen(),
+  const SeriesScreen(),
   const LocalScreen(),
 ];

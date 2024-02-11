@@ -101,7 +101,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                                     fontWeight: FontWeight.w500,
                                     color: _toggleValue
                                         ? bgSecondaryColor
-                                        : Colors.black,
+                                        : primaryColor,
                                   ),
                                 ),
                               ),

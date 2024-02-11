@@ -65,4 +65,21 @@ class Api {
       throw Exception('Failed to load upcoming movies');
     }
   }
+
+  Future<List<VideoMovies>> getVideoMovies(int idMovie) async {
+    final videoMovie =
+        "https://api.themoviedb.org/3/movie/$idMovie/videos?api_key=$apiKey";
+
+    final response = await http.get(Uri.parse(videoMovie));
+
+    if (response.statusCode == 200) {
+      final List<dynamic> data = json.decode(response.body)['results'];
+
+      List<VideoMovies> movies =
+          data.map((movies) => VideoMovies.fromMap(movies)).toList();
+      return movies;
+    } else {
+      throw Exception('Failed to load video movies');
+    }
+  }
 }
